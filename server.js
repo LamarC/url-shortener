@@ -25,24 +25,30 @@ app.get("/", (req, res) => {
   res.send("Shorter url goes here");
 });
 
-app.get("/short", (req, res) => {
-  res.redirect("Actual URL"); //We don't have one yet
+app.get("/s/:short", (req, res) => {
+  db.url.findOne({
+    short: req.params.short
+  },
+
+  function(err, doc) {
+    if (err) throw err;
+    res.redirect(doc.long);
+  });
+
 });
 
 app.get("/long", (req, res) => {
   console.log(req.query);
- 
+
   //generate a random string
   //create an object with {long: "longurl here", short:"random string"}
   db.url.insert({
     long: req.query.longUrl,
-    short: randomChar(),
-  })
+    short: randomChar()
+  });
 
-  res.send("save URL");
-
+  res.send("saved URL");
 });
-
 
 //Access to public folder
 app.use(express.static(__dirname + "/app/public"));
