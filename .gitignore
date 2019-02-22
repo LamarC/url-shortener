@@ -1,3 +1,4 @@
 **/node_modules
+.env
 
 https://still-plains-93913.herokuapp.com/ | https://git.heroku.com/still-plains-93913.git
