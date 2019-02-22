@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/LamarC/url-shortener/issues"
   },
-  "homepage": "https://github.com/LamarC/url-shortener#readme"
+  "homepage": "https://github.com/LamarC/url-shortener#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
