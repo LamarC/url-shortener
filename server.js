@@ -16,6 +16,10 @@ app.get("/short", (req, res) => {
   res.redirect("Actual URL"); //We don't have one yet
 });
 
+app.get("/long", (req, res) => {
+  console.log(req);
+});
+
 //Access to public folder
 app.use(express.static(__dirname + "/app/public"));
 
