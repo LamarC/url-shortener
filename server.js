@@ -1,10 +1,16 @@
+//Dependencies
 const express = require("express");
+
+//Express config
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("Shorter url goes here");
+  res.send("Shorter url goes here");
 });
 
-app.listen(PORT, () => {
-    console.log("App listening on Port: " + PORT);
+//Access to public folder
+app.use(express.static(__dirname + "/app/public"));
+
+app.listen(3000, () => {
+  console.log("App listening 🙌");
 });
